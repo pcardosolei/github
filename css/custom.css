@@ -1,5 +1,18 @@
-img {
+.backupImage{
     float: right;
     max-height: auto;
     width: 20vw;
+}
+
+.half {
+    width: 45vw;
+    height: auto;
+}
+
+ul {
+    font-size: 25px;
+}
+
+li {
+    list-style-type: none;
 }
