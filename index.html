@@ -81,8 +81,28 @@
 					<section>
 						<h5>HEAD</h5>
 						<div>
+							<ul>
+								<li>Reference to the Current Branch - where we are working</li>
+								<li>Locally each one of us has one HEAD</li>
+								<li>Every remote branch has its own HEAD - the youngest of that branch</li>
+								<li>Be careful of <strong>DETACHED HEAD</strong> states. No branch association</li>
+							</ul>
+						</div>
+						<div>
 							<img src="assets/detachedHead.png">
 						</div>
+						<div>
+							<img src="assets/detachedCommitExample.png">
+						</div>
+
+						<aside class="notes">
+							Explain what is a Detached state ( experimental zone )
+							How to reach a detached state.
+							Detached State - How to save changes. git checkout -b "branch"
+							Explain what is HEAD^ , HEAD~ , THE MIX OF BOTH.
+							
+						</aside>
+
 					</section>
 					<section>
 						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1280px-Git_operations.svg.png" />
