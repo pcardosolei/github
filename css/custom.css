@@ -5,13 +5,17 @@
 }
 
 .imgToBig {
-    height: 80%;
+    width: 80%;
+    height: auto;
+}
+
+.heightToBig {
+    height: 30%;
     width: auto;
 }
 
-.half {
-    width: 45vw;
-    height: auto;
+.mt-20 {
+    margin-top: 20px
 }
 
 ul {

@@ -40,51 +40,70 @@
 						<p>Distributed development</p>
 					</section>
 					<section>
-						<img src="assets/Hash_Tree.svg">
-						<p>Cryptographic authentication of history</p>
+						<img class="imgToBig" src="assets/Hash_Tree.svg">
+						<p>Concept of History</p>
 					</section>
 					<section data-background-image="assets/structureGit.png" data-background-size="65%"></section>
 					<section>
 						<h5>WORKING DIRECTORY</h5>
-						<div>
-							<ul>
-								<li>The local folder where the files are located.</li>
-								<li>Chan</li>
-							</ul>
+						<div class="columns mt-20">
+							<div class="column is-8">
+								<ul>
+									<li>The local folder where the files are located.</li>
+									<li>Files - Untracked / Tracked (Staged, Commited , Modified)</li>
+									<li>Where HEAD is pointing</li>
+								</ul>
+							</div>
+							<div class="column is-4">
+								<img class="backupImage" src="assets/structureGit.png" />
+							</div>
 						</div>
-						<div>
-							<img class="backupImage" src="assets/structureGit.png" />
-						</div>
+						<aside class="notes">
+							<p>Volatile - Changes as the HEAD changes.</p>
+							<p>It is what the coder sees on its personal computer</p>
+							<p>HEAD will be explained later</p>
+						</aside>
 					</section>
 					<section>
 						<h5>STAGING AREA</h5>
-						<div>
-							<ul>
-								<li>Preparation stage.</li>
-								<li>The files that are on the stage are the ones that go into the commit</li>
-
-							</ul>
+						<div class="columns mt-20">
+							<div class="column is-8">
+								<ul>
+									<li>Preparation stage.</li>
+									<li>The files that are on the stage are the ones that go into the commit.</li>
+									<li>Each commit moves the HEAD pointer a step on the local repo</li>
+								</ul>
+							</div>
+							<div class="column is-4">
+								<img class="backupImage" src="assets/structureGit.png" />
+							</div>
 						</div>
-						<div>
-							<img class="backupImage" src="assets/structureGit.png" />
-						</div>
+						<aside class="notes">
+							<p> It is here where the coder makes all the magic happen </p>
+						</aside>
 					</section>
 					<section>
 						<h5>REMOTE</h5>
-						<div class="half">
-							<ul>
-								<li> The place where the code is stored </li>
-								<li> The Url can be a repo, a repo from a fork or another server </li>
-								<li> Remote URL represented by a name ( default : ORIGIN )</li>
-							</ul>
+						<div class="columns mt-20">
+							<div class="column is-8">
+								<ul>
+									<li> The place where the code is stored </li>
+									<li> URL can be a repo, a repo from a fork or another server </li>
+									<li> Remote URL represented by a name ( default : ORIGIN )</li>
+								</ul>
+							</div>
+							<div class="column is-4">
+								<img class="backupImage" src="assets/structureGit.png" />
+							</div>
 						</div>
-						<div class="half">
-							<img class="backupImage" src="assets/structureGit.png" />
-						</div>
+						<aside class="notes">
+							<p></p>
+							<p></p>
+						</aside>
 					</section>
 					<section>
 						<h5>HEAD</h5>
-						<div class="columns">
+						<div class="columns mt-20">
 							<div class="column is-8">
 								<ul>
 									<li>Locally only one HEAD - Where we are currently working</li>
@@ -95,16 +114,18 @@
 							<div class="column is-4">
 								<img src="assets/detachedHead.png">
 							</div>
+							<aside class="notes">
+								<p>Explain what is a Detached state ( experimental zone )</p>
+								<p>How to reach a detached state.</p>
+							</aside>
 						</div>
-						<aside class="notes">
-							<p>Explain what is a Detached state ( experimental zone )</p>
-							<p>How to reach a detached state.</p>
-						</aside>
 					</section>
 					<section>
 						<img src="assets/detachedCommitExample.png">
-						<p>Detached State - How to save changes. git checkout -b "branch"</p>
-						<p>Explain what is HEAD^ , HEAD~ , THE MIX OF BOTH.</p>
+						<aside class="notes">
+							<p>Detached State - How to save changes. git checkout -b "branch"</p>
+							<p>Explain what is HEAD^ , HEAD~ , THE MIX OF BOTH.</p>
+						</aside>
 					</section>
 					<section>
 						<img class="imgToBig" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1280px-Git_operations.svg.png" />
@@ -125,7 +146,7 @@
 						<div>
 							<div>
 								<pre><code data-trim data-noescape>
-									git init
+									git <a href="https://git-scm.com/docs/git-init">init</a> "repo"
 								</code></pre>
 							</div>
 							<div>
@@ -133,7 +154,7 @@
 							</div>		
 							<div>
 								<pre><code data-trim data-noescape>
-									git clone
+									git <a href="https://git-scm.com/docs/git-clone">clone</a> "https://github.com/(username)/(repository).git"
 								</code></pre>
 							</div>
 						</div>
@@ -142,7 +163,12 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git add
+									git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
+										-a
+									(e.g) 
+										git add . 
+										git add -a
+
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -154,7 +180,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git commit
+									git <a href="https://git-scm.com/docs/git-commit">commit</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -165,7 +191,7 @@
 					<section>
 						<div>
 							<pre><code data-trim data-noescape>
-								git push
+								git <a href="https://git-scm.com/docs/git-push">push</a> 
 							</code></pre>
 						</div>
 						<div class="columns">
@@ -179,7 +205,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git pull
+									git <a href="https://git-scm.com/docs/git-pull">pull</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -191,7 +217,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git fetch
+									git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -203,8 +229,11 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git blame
+									git <a href="https://git-scm.com/docs/git-blame">blame "file"</a>
+									-l ( long revision )
 								</code></pre>
+								<p>Debug - An easy way to find who wrote the code or which commit is associated with that logic</p>
+								<img src="assets/git-blame-example.png">
 							</div>
 							<div class="column is-4">
 								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
@@ -212,13 +241,22 @@
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
+						<div>
+							<div>
 								<pre><code data-trim data-noescape>
-									git config
+									git <a href="https://git-scm.com/docs/git-config">config</a>
+									
+									# configuring a user.name
+									git config --global | --local | --repo user.name "Name"
+									
+									# getting the list of configurations
+									git config --list
+
+									# creating a git alias
+									git config --global alias.up "!git remote update; git merge --ff-only @{u}"
 								</code></pre>
 							</div>
-							<div class="column is-4">
+							<div>
 								<img src="http://m.quickmeme.com/img/aa/aadcb5f21e37f3bf6078018008c5c9109d4542ed403c32d1c924107f243e2551.jpg" />
 							</div>
 						</div>
@@ -227,7 +265,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git stash
+									git <a href="https://git-scm.com/docs/git-stash">stash</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">		
@@ -239,7 +277,7 @@
 						<div>
 							<div>
 								<pre><code data-trim data-noescape>
-									git remote
+									git <a href="https://git-scm.com/docs/git-remote">remote</a>
 								</code></pre>
 							</div>
 						</div>	
@@ -248,7 +286,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git merge
+									git <a href="https://git-scm.com/docs/git-merge">merge</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -260,7 +298,7 @@
 						<div class="columns">				
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git checkout
+									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -272,7 +310,7 @@
 						<div class="columns">		
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git tag
+									git <a href="https://git-scm.com/docs/git-tag">tag</a>
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -281,119 +319,137 @@
 						</div>
 					</section>
 					<section>					
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git branch
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="https://howto8165.files.wordpress.com/2014/09/git-tree.png?w=1108" />
-						</div>
-					</section>
-					<section>					
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git diff
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-branch">branch</a>branch
+
+									-d 
+									-D
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="https://howto8165.files.wordpress.com/2014/09/git-tree.png?w=1108" />
+							</div>
 						</div>
 					</section>
 					<section>					
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git reset
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="https://pics.me.me/git-reset-hard-head-me-every-weekday-at-5-pm-35353384.png" />
-							<img src="http://e.lvme.me/v17ph4x.jpg" />
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-diff">diff</a>
+
+									git diff --cached
+									git diff HEAD~3
+									git diff (commitHASH)
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+							</div>
 						</div>
 					</section>
 					<section>					
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git status
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="assets/git-status.png"/>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-reset">reset</a>
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="https://pics.me.me/git-reset-hard-head-me-every-weekday-at-5-pm-35353384.png" />
+								<img src="http://e.lvme.me/v17ph4x.jpg" />
+							</div>
 						</div>
 					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git rm
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="assets/git-rm.jpg">
+					<section>					
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-status">status</a>
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="assets/git-status.png"/>
+							</div>
 						</div>	
 					</section>
 					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git log
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="http://m.quickmeme.com/img/ca/caff4fdf07b2f74a2af771432e063eeb1371b9b3a0b7d9cee7a5fca17344c462.jpg" /> 
-						</div>
-					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git show
-							</code></pre>
-						</div>
-						<div class="column is-4">
-							<img src="https://debel.github.io/git-panic-and-how-to-avoid-it/images/history.jpg" />
-						</div>
-						</div>	
-					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git apply
-							</code></pre>
-						</div>
-						<div class="column is-4"></div>
-					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git cherry-pick "branch"
-							</code></pre>
-						</div>
-						<div class="column is-4"></div>
-					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git rebase -i
-							</code></pre>
-						</div>
-						<div class="column is-4"></div>
-					</section>
-					<section>
-							<div class="columns">
-									<div class="column is-8">
-							<pre><code data-trim data-noescape>
-								git revert
-							</code></pre>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git rm
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="assets/git-rm.jpg">
+							</div>
 						</div>		
-						<div class="column is-4"></div>				
+					</section>
+					<section>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-log">log</a>
+
+									(e.g)
+									git log --no-merges / --merges
+									git log --author="(author)"
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="http://m.quickmeme.com/img/ca/caff4fdf07b2f74a2af771432e063eeb1371b9b3a0b7d9cee7a5fca17344c462.jpg" /> 
+							</div>
+						</div>
+					</section>
+					<section>
+						<div>
+							<div>
+								<pre><code data-trim data-noescape>
+									git <a href="show
+								</code></pre>
+							</div>
+						</div>	
+					</section>
+					<section>
+						<div>
+							<div>
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-apply">apply</a>
+								</code></pre>
+							</div>
+						</div>	
+					</section>
+					<section>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> "branch"
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="assets/workflows-cherrypick.png">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div>
+							<div>
+								<pre><code data-trim data-noescape>
+									git rebase -i
+								</code></pre>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git revert
+								</code></pre>
+							</div>		
+							<div class="column is-4"></div>				
+						</div>
 					</section>
 				</section>
 				<section>
@@ -407,13 +463,13 @@
 					<section>Do not commit large binaries</section>		
 					<section>Do not commit generated files</section>		
 					<section>
-						<img src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
+						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
 					</section>		
 					<section>
-						<img src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
+						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
 					</section>		
 					<section>
-						<img src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
+						<img class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
 					</section>		
 					<section></section>		
 				</section>
