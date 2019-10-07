@@ -148,6 +148,7 @@
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-init">init</a> "repo"
 								</code></pre>
+								<p>Creates a .git directory</p>
 							</div>
 							<div>
 								<img src="https://www.meme-arsenal.com/memes/384d2d0757c2db6d9a08cee642cf802b.jpg"/>
@@ -156,6 +157,7 @@
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-clone">clone</a> "https://github.com/(username)/(repository).git"
 								</code></pre>
+								<p>Clones an existing git repository</p>
 							</div>
 						</div>
 					</section>
@@ -164,11 +166,14 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
-										-a
-									(e.g) 
-										git add . 
-										git add -a
+										
+									# add all files that are on the root of the current directory
+									git add . 
 
+									# add all files
+									git add -a
+
+									# you can use regex to add specific files
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -181,6 +186,13 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-commit">commit</a>
+							
+									# create a commit with all modified and updated files from the repo
+									git commit -a
+
+									# add a message to the commit
+									git commit -m "message" 
+
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -192,6 +204,8 @@
 						<div>
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-push">push</a> 
+
+								git push -f <strong class="red">THIS DELETES HISTORY OF THE REPOSITORY</strong>
 							</code></pre>
 						</div>
 						<div class="columns">
@@ -206,6 +220,10 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-pull">pull</a>
+								
+									git pull = git fetch origin +  git merge 
+									
+									# changes your repo automatically when you run this command
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -358,7 +376,7 @@
 									# staged to unstaged
 									git reset 
 									
-									<strong class="red">Unstaged Changes will dissapear</strong>
+									<strong class="red">NOTE: Unstaged Changes will dissapear</strong>
 									# staged/unstaged to latest existing commit 
 									git reset --hard
 									# staged/unstaged to specific commit hash
@@ -398,20 +416,24 @@
 					</section> -->
 					<section>
 						<div class="columns">
-							<div class="column is-8">
+							<div class="column is-10">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-log">log</a>
 
-									(e.g)
 									# check for the just a specific type of commits
-									git log --no-merges / --merges
+									git log --no-merges | --merges
+
 									# check for commit related to a user
 									git log --author="(author)"
 								</code></pre>
+							<p>Shows <strong class="red">the story</strong> of the local branch repository</p>
 							</div>
 							<div class="column is-4">
 								<img src="http://m.quickmeme.com/img/ca/caff4fdf07b2f74a2af771432e063eeb1371b9b3a0b7d9cee7a5fca17344c462.jpg" /> 
 							</div>
+						</div>
+						<div>
+							<img src="https://git-scm.com/figures/18333fig0201-tn.png">
 						</div>
 					</section>
 					<section>
@@ -419,6 +441,7 @@
 							<div>
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-show">show</a>
+								
 								</code></pre>
 							</div>
 						</div>	
@@ -436,7 +459,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> "branch"
+									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> "commit"
 								</code></pre>
 							</div>
 							<div class="column is-4">
