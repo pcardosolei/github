@@ -352,37 +352,52 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre style="width: 110%"><code class="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-commit">commit</a>
 						
 								# create a commit with all modified and updated files from the repo
 								git commit -a
 
-								# add a message to the commit 
+								# add a message to the commit  <strong style="color: blue">MESSAGE IS REQUIRED</strong> 
 								git commit -m "message" 
-								<strong style="color: blue">MESSAGE IS REQUIRED</strong> 
-								-m can be ommit - git will open VSCode / Vim or chosen text editor
+				
+								-m can be <strong>omitted</strong> -> git will open VSCode / Vim or chosen text editor
+							
+								git commit -p  # commit interactive					
+								git commit -u # untracked-files
+
+								# when finished it creates a new revision/commit into the local repo
 							</code></pre>
 						</div>
 					</section>
 					<section>
 						<div>
 							<pre><code data-trim data-noescape>
-								git <a href="https://git-scm.com/docs/git-push">push</a> 
+								git <a href="https://git-scm.com/docs/git-push">push</a> #the normal usage
 								
-								#<strong class="red">THIS DELETES HISTORY OF THE REPOSITORY</strong>
-								git push -f
+								<strong class="warning">CAREFUL WITH UPSTREAM</strong>
+								git branch --set-upstream-to="origin/'branch-name'"
+
+								<strong class="red">DELETING A REMOTE BRANCH</strong>
+								git push --delete origin 'branch-name'
 							</code></pre>
+							<img style="width: 60%" class="imgToBig" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
 						</div>
 					</section>
 					<section>
+							<p><strong class="red">BEWARE OF 'GIT PUSH -F'</strong></p>
+							 <ul>
+								 <li>DELETES HISTORY OF THE REPOSITORY </li>
+								 <li>REWRITES THE HISTORY OF THE REPOSITORY BASED ON THAT BRANCH</li>
+							 </ul>
 						<div class="columns">
-							<div class="column is-6">
-								<img src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
+							<div class="column is-4">
 								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTveDbBjP4OohrbBb0cogpo5wf2MhDimRgdIaPeGQCQ1dG9ySjiQ">
 							</div>
-							<div class="column is-6">
+							<div class="column is-4">
 								<img src="https://img.devrant.com/devrant/rant/r_292990_JmRu7.gif">
+							</div>
+							<div class="column is-4">
 								<img src="https://img.devrant.com/devrant/rant/r_213976_jYqXM.gif">
 							</div>
 						</div>
@@ -413,48 +428,10 @@
 								git fetch origin branch 
 							</code></pre>
 						</div>
-						<div class="container">
+						<div style="height: 400px;" class="container">
 							<img src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
 						</div>
-					</section>
-
-					<section>
-						<img src="assets/stack.jpg">
-					</section>
-					<section>
-						<div class="container">
-							<pre><code data-trim data-noescape>
-								git <a href="https://git-scm.com/docs/git-stash">stash</a>
-
-								# add to the stash
-								git stash push
-
-								# apply to unstaged and keep it on the stash
-								git stash apply  
-
-								# apply to unstaged and remove from the stash
-								git stash pop
-								
-								# remove without adding to the changes
-								git stash drop 
-
-								# show all items on the stash
-								git stash list
-							</code></pre>
-						</div>
-					</section>
-					<section>
-						<img src="https://miro.medium.com/max/1313/1*PTPJrxVWTmJaHC6wzeUr4A.jpeg" />	
-					</section>
-					<section>
-						<div>
-							<div>
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-remote">remote</a>
-								</code></pre>
-							</div>
-						</div>	
-					</section>
+					</section>					
 					<section>
 						<div class="columns">
 							<div class="column is-8">
@@ -469,14 +446,6 @@
 							</div>
 						</div>
 					</section>
-					<section>			
-						<div class="container">
-							<pre><code data-trim data-noescape>
-								git <a href="https://git-scm.com/docs/git-tag">tag</a>
-							</code></pre>
-						</div>
-					</section>
-										
 					<section>					
 						<div class="columns">
 							<div class="column is-8">
@@ -497,6 +466,52 @@
 							<div class="column is-4">
 								<img src="http://e.lvme.me/v17ph4x.jpg" />
 							</div>
+						</div>
+					</section>
+					<section>
+							<img src="assets/stack.jpg">
+						</section>
+						<section>
+							<div class="container">
+								<pre><code style="max-height: 500px" data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-stash">stash</a>
+	
+									# add to the stash
+									git stash push
+	
+									# apply to unstaged and keep it on the stash
+									git stash apply  
+	
+									# apply to unstaged and remove from the stash
+									git stash pop
+									
+									# remove without adding to the changes
+									git stash drop 
+	
+									# show all items on the stash
+									git stash list
+								</code></pre>
+							</div>
+						</section>
+						<section>
+							<img src="https://miro.medium.com/max/1313/1*PTPJrxVWTmJaHC6wzeUr4A.jpeg" />	
+						</section>
+				</section>
+				<section>
+					<section>
+						<div>
+							<div>
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-remote">remote</a>
+								</code></pre>
+							</div>
+						</div>	
+					</section>
+					<section>			
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-tag">tag</a>
+							</code></pre>
 						</div>
 					</section>
 					<section>
@@ -538,26 +553,43 @@
 						</div>
 					</section>
 					<section>
-						reflog
-						gitk
+						<pre><code data-trim data-noescape>
+								# other commands 
 
+								# kinda of a changelog
+								git whatchanged
+
+								# when you need to find lost work
+								git reflog
+
+								# desktop git branch tool for debug
+								gitk
+
+							</code></pre>
 					</section>
 				</section>
 				<section>
 					<section>BEST PRACTICES</section>
 					<section>One commit. One change</section>
 					<section>One Pull request. One Concern</section>
+					<section>Code Review!!!!!</section> 
 					<section>Proper commit messages</section>
 					<section>Commit often, Squash and Publish</section>
 					<section>Don’t rewrite history on shared branches</section>
 					<section>Protect your important branches from rewriting</section>
 					<section>Do not commit large binaries</section>		
 					<section>Do not commit generated files</section>		
+					<section>Git Flow</section>
+				</section>
+				<section>
 					<section>
+						Don'ts !!
+					</section>
+					<section>	
 						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
 					</section>		
 					<section>
-						<img class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
+						<img style="height: 600px;" class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
 					</section>		
 					<section></section>		
 				</section>
