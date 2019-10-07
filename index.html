@@ -179,23 +179,20 @@
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-commit">commit</a>
-							
-									# create a commit with all modified and updated files from the repo
-									git commit -a
+						<img class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-commit">commit</a>
+						
+								# create a commit with all modified and updated files from the repo
+								git commit -a
 
-									# add a message to the commit
-									git commit -m "message" 
-
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
-							</div>
-						</div>	
+								# add a message to the commit
+								git commit -m "message" 
+							</code></pre>
+						</div>
 					</section>
 					<section>
 						<div>
@@ -288,6 +285,13 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-stash">stash</a>
+
+									git stash push
+									git stash apply
+									git stash pop 
+									git stash drop 
+									git stash list 
+									
 								</code></pre>
 							</div>
 							<div class="column is-4">		
@@ -374,20 +378,26 @@
 							</div>
 						</div>
 					</section>
+					<section>
+						<img style="width: 70%;" src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+					</section>
 					<section>					
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-diff">diff</a>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-diff">diff</a>
 
-									git diff --cached
-									git diff HEAD~3
-									git diff (commitHASH)
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
-							</div>
+								# compare changes from local repo with untracked changes
+								git diff
+								
+								# compare changes from local repo with staged changes
+								git diff --cached
+
+								# compare changes with commit that commited 3 revisions before
+								git diff HEAD~3
+
+								# compare changes with the commit with a specific hash
+								git diff (commitHASH)
+							</code></pre>
 						</div>
 					</section>
 					<section>					
@@ -425,18 +435,6 @@
 							</div>
 						</div>	
 					</section>
-					<!--<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git rm
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="assets/git-rm.jpg">
-							</div>
-						</div>		
-					</section> -->
 					<section>
 						<div class="columns">
 							<div class="column is-10">
@@ -463,8 +461,12 @@
 						<div>
 							<div>
 								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-show">show</a>
-								
+									git <a href="https://git-scm.com/docs/git-show">show</a>			
+									
+									# show information about a specific commit - changes / author / date / etc
+									git show "commit"
+
+									# most options are relative to type of information to be shown
 								</code></pre>
 							</div>
 						</div>	

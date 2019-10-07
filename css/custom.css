@@ -9,6 +9,11 @@
     height: auto;
 }
 
+.imageTooSmall {
+    width: 50%;
+    height: auto;
+}
+
 .heightToBig {
     height: 30%;
     width: auto;
