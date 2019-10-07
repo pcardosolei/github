@@ -223,6 +223,7 @@
 								
 									git pull = git fetch origin +  git merge 
 									
+									# NOTES:
 									# changes your repo automatically when you run this command
 								</code></pre>
 							</div>
@@ -305,6 +306,8 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-merge">merge</a>
+
+									# The Little Monster or the Cool Guy
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -317,6 +320,10 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
+
+
+									<strong class="red"># Note: the following command deletes all untracked changes</strong>
+									git checkout .
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -329,6 +336,8 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-tag">tag</a>
+
+
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -342,8 +351,14 @@
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-branch">branch</a>branch
 
-									-d 
-									-D
+									# deletes a branch 
+									git branch -d  
+									
+									# delete w/ force a branch with existing changes to be commited/ merged
+									git branch -D  branch  
+												-a  # Check all the branches
+												-r  # Check existing remote branches
+
 								</code></pre>
 							</div>
 							<div class="column is-4">
