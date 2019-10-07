@@ -354,6 +354,15 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-reset">reset</a>
+								
+									# staged to unstaged
+									git reset 
+									
+									<strong class="red">Changes will dissapear</strong>
+									# staged/unstaged to latest existing commit 
+									git reset --hard
+									# staged/unstaged to specific commit hash
+									git reset 'hashCode'
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -367,6 +376,8 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-status">status</a>
+								
+									git status --short | --long ( default )
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -374,7 +385,7 @@
 							</div>
 						</div>	
 					</section>
-					<section>
+					<!--<section>
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
@@ -385,7 +396,7 @@
 								<img src="assets/git-rm.jpg">
 							</div>
 						</div>		
-					</section>
+					</section> -->
 					<section>
 						<div class="columns">
 							<div class="column is-8">
@@ -406,7 +417,7 @@
 						<div>
 							<div>
 								<pre><code data-trim data-noescape>
-									git <a href="show
+									git <a href="https://git-scm.com/docs/git-show">show</a>
 								</code></pre>
 							</div>
 						</div>	
