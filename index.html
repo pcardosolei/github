@@ -29,19 +29,23 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>GIT 101</h1>
+					<h1>GIT 101</h1>	
 				</section>
 				
 				<!-- FIRST SECTION -->
 				<section>
+					<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
+				</section>
+				<section>
 					<section>
-						<h1>Characteristic</h1>
-						<p class="fragment grow">Strong support for non-linear development</p>
-						<p class="fragment grow">Distributed development</p>
+						<h3>Characteristics</h3>
+						<p>Strong support for non-linear development</p>
+						<p>Distributed development</p>
 					</section>
 					<section>
-						<img class="imgToBig" src="assets/Hash_Tree.svg">
+						<img style="width: 65%" src="assets/Hash_Tree.svg">
 						<p>Concept of History</p>
+						<p class="yellow">NOTE: It is possible to rewrite the history</p>
 					</section>
 					<section data-background-image="assets/structureGit.png" data-background-size="65%"></section>
 					<section>
@@ -71,11 +75,11 @@
 								<li>Each commit moves the HEAD pointer a step on the local repo</li>
 							</ul>
 						</div>
-						<div class="column is-4">
+						<div class="container">
 							<img class="backupImage" src="assets/structureGit.png" />
 						</div>
 						<aside class="notes">
-							<p> It is here where the coder makes all the magic happen </p>
+							<p> It is here where the coder makes all the magic happen.</p>
 						</aside>
 					</section>
 					<section>
@@ -131,7 +135,7 @@
 				</section>
 			
 				
-				<!-- SECOND BIG SECTION-->
+				<!-- SECOND BASIC GIT COMMANDS SECTION-->
 				<section>						
 					<section>
 						<h5>COMMANDS</h5>
@@ -139,19 +143,181 @@
 					<section>
 						<div>
 							<div>
+								<p>Creates a .git directory with the default configs</p>
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-init">init</a> "repo"
 								</code></pre>
-								<p>Creates a .git directory</p>
 							</div>
 							<div>
 								<img src="https://www.meme-arsenal.com/memes/384d2d0757c2db6d9a08cee642cf802b.jpg"/>
 							</div>		
 							<div>
 								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-clone">clone</a> "https://github.com/(username)/(repository).git"
+									git <a href="https://git-scm.com/docs/git-clone">clone</a> 'https://github.com/(username)/(repository).git'
 								</code></pre>
 								<p>Clones an existing git repository</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<pre style="width: 110%"><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-config">config</a>
+								
+								# configuring a user.name
+								git config --global | --local | --repo user.name="Name"
+								
+								# getting the list of configurations
+								git config --list
+
+								# creating a git alias
+								git config --global alias.up "!git remote update; git merge --ff-only @{u}"
+						</code></pre>
+					</section>
+					<section>
+						<img src="http://m.quickmeme.com/img/aa/aadcb5f21e37f3bf6078018008c5c9109d4542ed403c32d1c924107f243e2551.jpg" />
+					</section>
+					<section>					
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-status">status</a>
+								
+									git status --short | --long ( default )
+								</code></pre>
+							</div>
+							<div class="column is-4">
+								<img src="assets/git-status.png"/>
+							</div>
+						</div>	
+					</section>
+					<section>
+						<pre style="width: 110%"><code data-trim data-noescape>
+							git <a href="https://git-scm.com/docs/git-show">show</a>			
+							
+							# show information about a specific commit - changes / author / date / etc
+							git show "commit"
+
+							# most options are relative to type of information to be shown
+							# short | medium | full | fuller | email
+						</code></pre>			
+					</section>
+					<section>
+						<div class="columns">
+							<div class="column is-10">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-log">log</a>
+
+									# check for the just a specific type of commits
+									git log --no-merges | --merges
+
+									# check for commit related to a user
+									git log --author="(author)"
+
+									# multiple options to see the history of revisions
+									# also graphical with git log --graph
+								</code></pre>
+							<p>Shows <strong class="red">the story</strong> of the local branch repository</p>
+							</div>
+							<div class="column is-4">
+								<img src="http://m.quickmeme.com/img/ca/caff4fdf07b2f74a2af771432e063eeb1371b9b3a0b7d9cee7a5fca17344c462.jpg" /> 
+							</div>
+						</div>
+						<aside class="notes">
+							<p>-p also shows the changes</p>
+						</aside>
+					</section>
+					<section>
+						<img src="assets//log-example.png">
+					</section>
+					<section>
+						<div class="columns">
+							<div class="column is-8">
+								<pre><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-blame">blame "file"</a>
+									-l ( long revision )
+
+									# find the commiter between lines 0 and 10 of the filename
+									git blame filename -L 0,10
+
+									# for debug purposes
+									# An easy way to find who wrote the code 
+									# or 
+									# which commit is associated its logic
+									# or
+									# tracking changes
+								</code></pre>
+							</div>
+							<div class="column is-6">
+								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
+							</div>
+						</div>
+					</section>
+					<section>
+							<img style="width: 60%;" src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+					</section>
+					<section>				
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-diff">diff</a>
+
+								# compare changes from local repo with untracked changes
+								git diff
+								
+								# compare changes from local repo with staged changes
+								git diff --cached
+
+								# compare changes with commit that commited 3 revisions before
+								git diff HEAD~3
+
+								# compare changes with the commit with a specific hash
+								git diff (commitHASH)
+							</code></pre>
+						</div>
+					</section>
+				</section>
+				<section>
+					<!-- should end here-->
+					<section>
+						<img src="https://howto8165.files.wordpress.com/2014/09/git-tree.png?w=1108" />
+					</section>
+					<section>					
+						<div class="container">
+							<pre style="width: 110%"><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-branch">branch</a>
+
+								git branch 'branch-name' #create a branch
+
+								git branch # all local branches
+								git branch -a  # Check all the branches
+								git branch -r	# Check existing remote branches  
+
+								git branch -d  # deletes a branch 
+								
+								# delete w/ force a branch with existing changes to be commited/ merged
+								git branch -D  branch  
+									
+								git branch --contains 'commit' # check which branch contains a commit
+							</code></pre>
+						</div>
+					</section>
+					<section>	
+						<div class="columns">				
+							<div class="column is-4">
+								<img src="https://i.chzbgr.com/full/7803746304/hC0425E78/" />
+							</div>
+							<div class="column is-10">
+								<pre style="width: 110%"><code data-trim data-noescape>
+									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
+
+									# checkout to a existing branch
+									git checkout branch
+
+									# checkout to a branch and create if it does not exist 
+									git checkout -b new-branch
+
+									<strong class="red"># Note: the following command deletes all untracked changes</strong>
+									git checkout .
+								</code></pre>
 							</div>
 						</div>
 					</section>
@@ -179,7 +345,10 @@
 						</div>
 					</section>
 					<section>
-						<img class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
+						<img style="width: 120%;" src="https://git-scm.com/figures/18333fig0201-tn.png">
+					</section>
+					<section>
+						<img style="width: 600px" class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
 					</section>
 					<section>
 						<div class="container">
@@ -189,8 +358,10 @@
 								# create a commit with all modified and updated files from the repo
 								git commit -a
 
-								# add a message to the commit
+								# add a message to the commit 
 								git commit -m "message" 
+								<strong style="color: blue">MESSAGE IS REQUIRED</strong> 
+								-m can be ommit - git will open VSCode / Vim or chosen text editor
 							</code></pre>
 						</div>
 					</section>
@@ -203,101 +374,77 @@
 								git push -f
 							</code></pre>
 						</div>
-						<div class="columns">
-							<img class="column is-4" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
-							<img class="column is-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTveDbBjP4OohrbBb0cogpo5wf2MhDimRgdIaPeGQCQ1dG9ySjiQ">
-							<img class="column is-4" src="https://img.devrant.com/devrant/rant/r_292990_JmRu7.gif">
-							<img class="column is-4" src="https://img.devrant.com/devrant/rant/r_213976_jYqXM.gif">
-						</div>
 					</section>
 					<section>
 						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-pull">pull</a>
+							<div class="column is-6">
+								<img src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTveDbBjP4OohrbBb0cogpo5wf2MhDimRgdIaPeGQCQ1dG9ySjiQ">
+							</div>
+							<div class="column is-6">
+								<img src="https://img.devrant.com/devrant/rant/r_292990_JmRu7.gif">
+								<img src="https://img.devrant.com/devrant/rant/r_213976_jYqXM.gif">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-pull">pull</a>
+							
+								git pull = git fetch origin +  git merge 
 								
-									git pull = git fetch origin +  git merge 
-									
-									# NOTES:
-									# changes your repo automatically when you run this command
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BKAszTfiBKkWDNQ1i_o_VdKTUiiU2TnY3Vxv1FA1N2rSJc9W">
-							</div>
+								# NOTES:
+								# changes your repo automatically when you run this command
+							</code></pre>
+						<div class="container">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BKAszTfiBKkWDNQ1i_o_VdKTUiiU2TnY3Vxv1FA1N2rSJc9W">
+						</div>
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
 
-									# fetchs the information from the origin
-									git fetch origin | git fetch --all
+								# fetchs the information from the origin
+								git fetch origin | git fetch --all
 
-									git fetch origin branch 
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
-							</div>
+								git fetch origin branch 
+							</code></pre>
+						</div>
+						<div class="container">
+							<img src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
+						</div>
+					</section>
+
+					<section>
+						<img src="assets/stack.jpg">
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-stash">stash</a>
+
+								# add to the stash
+								git stash push
+
+								# apply to unstaged and keep it on the stash
+								git stash apply  
+
+								# apply to unstaged and remove from the stash
+								git stash pop
+								
+								# remove without adding to the changes
+								git stash drop 
+
+								# show all items on the stash
+								git stash list
+							</code></pre>
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-blame">blame "file"</a>
-									-l ( long revision )
-								</code></pre>
-								<p>Debug - An easy way to find who wrote the code or which commit is associated with that logic</p>
-								<img src="assets/git-blame-example.png">
-							</div>
-							<div class="column is-4">
-								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
-							</div>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div>
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-config">config</a>
-									
-									# configuring a user.name
-									git config --global | --local | --repo user.name "Name"
-									
-									# getting the list of configurations
-									git config --list
-
-									# creating a git alias
-									git config --global alias.up "!git remote update; git merge --ff-only @{u}"
-								</code></pre>
-							</div>
-							<div>
-								<img src="http://m.quickmeme.com/img/aa/aadcb5f21e37f3bf6078018008c5c9109d4542ed403c32d1c924107f243e2551.jpg" />
-							</div>
-						</div>
-					</section>
-					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-stash">stash</a>
-
-									git stash push
-									git stash apply
-									git stash pop 
-									git stash drop 
-									git stash list 
-									
-								</code></pre>
-							</div>
-							<div class="column is-4">		
-								<img src="https://miro.medium.com/max/1313/1*PTPJrxVWTmJaHC6wzeUr4A.jpeg" />
-							</div>
-						</div>	
+						<img src="https://miro.medium.com/max/1313/1*PTPJrxVWTmJaHC6wzeUr4A.jpeg" />	
 					</section>
 					<section>
 						<div>
@@ -322,84 +469,14 @@
 							</div>
 						</div>
 					</section>
-					<section>	
-						<div class="columns">				
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
-
-									# checkout to a existing branch
-									git checkout branch
-
-									# checkout to a branch and create if it does not exist 
-									git checkout -b new-branch
-
-									<strong class="red"># Note: the following command deletes all untracked changes</strong>
-									git checkout .
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://i.chzbgr.com/full/7803746304/hC0425E78/" />
-							</div>
-						</div>
-					</section>
 					<section>			
-						<div class="columns">		
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-tag">tag</a>
-
-
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="assets/git-tag.jpg" />	
-							</div>
-						</div>
-					</section>
-					<section>					
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-branch">branch</a>branch
-
-									# deletes a branch 
-									git branch -d  
-									
-									# delete w/ force a branch with existing changes to be commited/ merged
-									git branch -D  branch  
-												-a  # Check all the branches
-												-r  # Check existing remote branches
-
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://howto8165.files.wordpress.com/2014/09/git-tree.png?w=1108" />
-							</div>
-						</div>
-					</section>
-					<section>
-						<img style="width: 70%;" src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
-					</section>
-					<section>					
 						<div class="container">
 							<pre><code data-trim data-noescape>
-								git <a href="https://git-scm.com/docs/git-diff">diff</a>
-
-								# compare changes from local repo with untracked changes
-								git diff
-								
-								# compare changes from local repo with staged changes
-								git diff --cached
-
-								# compare changes with commit that commited 3 revisions before
-								git diff HEAD~3
-
-								# compare changes with the commit with a specific hash
-								git diff (commitHASH)
+								git <a href="https://git-scm.com/docs/git-tag">tag</a>
 							</code></pre>
 						</div>
 					</section>
+										
 					<section>					
 						<div class="columns">
 							<div class="column is-8">
@@ -412,6 +489,7 @@
 									<strong class="red">NOTE: Unstaged Changes will dissapear</strong>
 									# staged/unstaged to latest existing commit 
 									git reset --hard
+									
 									# staged/unstaged to specific commit hash
 									git reset 'hashCode'
 								</code></pre>
@@ -420,56 +498,6 @@
 								<img src="http://e.lvme.me/v17ph4x.jpg" />
 							</div>
 						</div>
-					</section>
-					<section>					
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-status">status</a>
-								
-									git status --short | --long ( default )
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="assets/git-status.png"/>
-							</div>
-						</div>	
-					</section>
-					<section>
-						<div class="columns">
-							<div class="column is-10">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-log">log</a>
-
-									# check for the just a specific type of commits
-									git log --no-merges | --merges
-
-									# check for commit related to a user
-									git log --author="(author)"
-								</code></pre>
-							<p>Shows <strong class="red">the story</strong> of the local branch repository</p>
-							</div>
-							<div class="column is-4">
-								<img src="http://m.quickmeme.com/img/ca/caff4fdf07b2f74a2af771432e063eeb1371b9b3a0b7d9cee7a5fca17344c462.jpg" /> 
-							</div>
-						</div>
-						<div>
-							<img src="https://git-scm.com/figures/18333fig0201-tn.png">
-						</div>
-					</section>
-					<section>
-						<div>
-							<div>
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-show">show</a>			
-									
-									# show information about a specific commit - changes / author / date / etc
-									git show "commit"
-
-									# most options are relative to type of information to be shown
-								</code></pre>
-							</div>
-						</div>	
 					</section>
 					<section>
 						<div>
@@ -494,12 +522,10 @@
 					</section>
 					<section>
 						<div>
-							<div>
-								<pre><code data-trim data-noescape>
-									git rebase -i
-								</code></pre>
-							</div>
-						</div>
+							<pre><code data-trim data-noescape>
+								git rebase -i
+							</code></pre>
+						</div>	
 					</section>
 					<section>
 						<div class="columns">
@@ -510,6 +536,11 @@
 							</div>		
 							<div class="column is-4"></div>				
 						</div>
+					</section>
+					<section>
+						reflog
+						gitk
+
 					</section>
 				</section>
 				<section>
@@ -524,9 +555,6 @@
 					<section>Do not commit generated files</section>		
 					<section>
 						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
-					</section>		
-					<section>
-						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
 					</section>		
 					<section>
 						<img class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
