@@ -4,6 +4,11 @@
     width: 20vw;
 }
 
+.imgToBig {
+    height: 80%;
+    width: auto;
+}
+
 .half {
     width: 45vw;
     height: auto;
@@ -15,4 +20,13 @@ ul {
 
 li {
     list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.red {
+    color: red;
+}
+
+.warning {
+    color: yellow;
 }
