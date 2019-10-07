@@ -358,7 +358,7 @@
 									# staged to unstaged
 									git reset 
 									
-									<strong class="red">Changes will dissapear</strong>
+									<strong class="red">Unstaged Changes will dissapear</strong>
 									# staged/unstaged to latest existing commit 
 									git reset --hard
 									# staged/unstaged to specific commit hash
@@ -366,7 +366,6 @@
 								</code></pre>
 							</div>
 							<div class="column is-4">
-								<img src="https://pics.me.me/git-reset-hard-head-me-every-weekday-at-5-pm-35353384.png" />
 								<img src="http://e.lvme.me/v17ph4x.jpg" />
 							</div>
 						</div>
@@ -404,7 +403,9 @@
 									git <a href="https://git-scm.com/docs/git-log">log</a>
 
 									(e.g)
+									# check for the just a specific type of commits
 									git log --no-merges / --merges
+									# check for commit related to a user
 									git log --author="(author)"
 								</code></pre>
 							</div>
