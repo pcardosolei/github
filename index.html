@@ -36,8 +36,8 @@
 				<section>
 					<section>
 						<h1>Characteristic</h1>
-						<p>Strong support for non-linear development</p>
-						<p>Distributed development</p>
+						<p class="fragment grow">Strong support for non-linear development</p>
+						<p class="fragment grow">Distributed development</p>
 					</section>
 					<section>
 						<img class="imgToBig" src="assets/Hash_Tree.svg">
@@ -45,18 +45,16 @@
 					</section>
 					<section data-background-image="assets/structureGit.png" data-background-size="65%"></section>
 					<section>
-						<h5>WORKING DIRECTORY</h5>
-						<div class="columns mt-20">
-							<div class="column is-8">
-								<ul>
-									<li>The local folder where the files are located.</li>
-									<li>Files - Untracked / Tracked (Staged, Commited , Modified)</li>
-									<li>Where HEAD is pointing</li>
-								</ul>
-							</div>
-							<div class="column is-4">
-								<img class="backupImage" src="assets/structureGit.png" />
-							</div>
+						<div class="container">
+							<h5>WORKING DIRECTORY</h5>
+							<ul>
+								<li>The local folder where the files are located.</li>
+								<li>Files - Untracked / Tracked (Staged, Commited , Modified)</li>
+								<li>Where local HEAD is pointing</li>
+							</ul>
+						</div>
+						<div class="container">
+							<img class="backupImage" src="assets/structureGit.png" />
 						</div>
 						<aside class="notes">
 							<p>Volatile - Changes as the HEAD changes.</p>
@@ -65,36 +63,32 @@
 						</aside>
 					</section>
 					<section>
-						<h5>STAGING AREA</h5>
-						<div class="columns mt-20">
-							<div class="column is-8">
-								<ul>
-									<li>Preparation stage.</li>
-									<li>The files that are on the stage are the ones that go into the commit.</li>
-									<li>Each commit moves the HEAD pointer a step on the local repo</li>
-								</ul>
-							</div>
-							<div class="column is-4">
-								<img class="backupImage" src="assets/structureGit.png" />
-							</div>
+						<div class="container">
+							<h5>STAGING AREA</h5>
+							<ul>
+								<li>Preparation stage.</li>
+								<li>The files that are on the stage are the ones that go into the commit.</li>
+								<li>Each commit moves the HEAD pointer a step on the local repo</li>
+							</ul>
+						</div>
+						<div class="column is-4">
+							<img class="backupImage" src="assets/structureGit.png" />
 						</div>
 						<aside class="notes">
 							<p> It is here where the coder makes all the magic happen </p>
 						</aside>
 					</section>
 					<section>
-						<h5>REMOTE</h5>
-						<div class="columns mt-20">
-							<div class="column is-8">
-								<ul>
-									<li> The place where the code is stored </li>
-									<li> URL can be a repo, a repo from a fork or another server </li>
-									<li> Remote URL represented by a name ( default : ORIGIN )</li>
-								</ul>
-							</div>
-							<div class="column is-4">
-								<img class="backupImage" src="assets/structureGit.png" />
-							</div>
+						<div class="container">
+							<h5>REMOTE</h5>
+							<ul>
+								<li> The place where the code is stored </li>
+								<li> URL can be a repo, a repo from a fork or another server </li>
+								<li> Remote URL represented by a name ( default : ORIGIN )</li>
+							</ul>
+						</div>
+						<div class="container">
+							<img class="backupImage" src="assets/structureGit.png" />
 						</div>
 						<aside class="notes">
 							<p></p>
@@ -162,23 +156,26 @@
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
-										
-									# add all files that are on the root of the current directory
-									git add . 
+						<div class="container">
+							<img src="https://i.imgflip.com/1swnmk.jpg"/>
+						</div>
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
+									
+								# add all files that are on the root of the current directory
+								git add . 
 
-									# add all files
-									git add -a
+								# add all files
+								git add -a
 
-									# you can use regex to add specific files
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://i.imgflip.com/1swnmk.jpg"/>
-							</div>
+								#add updated files 
+								git add -u
+
+								# you can use regex to add specific files
+							</code></pre>
 						</div>
 					</section>
 					<section>
@@ -204,8 +201,9 @@
 						<div>
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-push">push</a> 
-
-								git push -f <strong class="red">THIS DELETES HISTORY OF THE REPOSITORY</strong>
+								
+								#<strong class="red">THIS DELETES HISTORY OF THE REPOSITORY</strong>
+								git push -f
 							</code></pre>
 						</div>
 						<div class="columns">
@@ -237,6 +235,11 @@
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
+
+									# fetchs the information from the origin
+									git fetch origin | git fetch --all
+
+									git fetch origin branch 
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -321,6 +324,11 @@
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
 
+									# checkout to a existing branch
+									git checkout branch
+
+									# checkout to a branch and create if it does not exist 
+									git checkout -b new-branch
 
 									<strong class="red"># Note: the following command deletes all untracked changes</strong>
 									git checkout .
