@@ -231,8 +231,11 @@
 					</section>
 					<section>
 						<div class="columns">
+							<div class="column is-4">
+								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
+							</div>
 							<div class="column is-8">
-								<pre><code data-trim data-noescape>
+								<pre style="width: 120%"><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-blame">blame "file"</a>
 									-l ( long revision )
 
@@ -247,9 +250,6 @@
 									# tracking changes
 								</code></pre>
 							</div>
-							<div class="column is-6">
-								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
-							</div>
 						</div>
 					</section>
 					<section>
@@ -257,7 +257,7 @@
 					</section>
 					<section>				
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code style="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-diff">diff</a>
 
 								# compare changes from local repo with untracked changes
@@ -511,10 +511,59 @@
 				</section>
 				<section>
 					<section>
+						<div class="container">
+							<pre style="width: 110%"><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> 'commit(s)'
+							
+								# copys specific commits to be added into the local HEAD
+								<strong class="warning"># may cause conflicts</strong>
+								# if you have multiple commit to be picked and changes need to be applied
+									git cherry-pick --continue 
+											--skip
+											--abort
+											--quit
+							</code></pre>
+						</div>		
+					</section>
+					<section>
+						<img src="assets/workflows-cherrypick.png">
+					</section>
+					<section>
+						<div>
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-rebase">rebase</a>
+								
+								<strong class="warning">THIS REWRITES HISTORY</strong>
+								
+								git rebase -i ( DEMO )
+
+							</code></pre>
+						</div>	
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-revert">revert</a>
+								
+								# when the commit 
+							</code></pre>
+						</div> 
+					</section>
+					<section>
 						<div>
 							<div>
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-remote">remote</a>
+								
+									# mostly about the remote repo config
+									# add user repos in here if you want to share information. 
+									git remote -v 
+
+									# delete stale references branches
+									git prune == git fetch --prune 
+
+									# update remote references
+									git remote -p / update == git fetch --all
 								</code></pre>
 							</div>
 						</div>	
@@ -539,37 +588,6 @@
 						</div>
 					</section>
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> 'commit(s)'
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="assets/workflows-cherrypick.png">
-							</div>
-						</div>
-					</section>
-					<section>
-						<div>
-							<pre><code data-trim data-noescape>
-								git rebase -i
-								
-								<strong class="warning">THIS REWRITES HISTORY</strong>
-							</code></pre>
-						</div>	
-					</section>
-					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git revert
-								</code></pre>
-							</div>		
-							<div class="column is-4"></div>				
-						</div>
-					</section>
-					<section>
 						<pre><code data-trim data-noescape>
 								# other commands 
 
@@ -577,7 +595,7 @@
 								<a href="https://git-scm.com/docs/git-whatchanged">git whatchanged</a>
 
 								# when you need to find lost work / Manage reflog information
-								<a href="https://git-scm.com/docs/git-reflog">reflog</a> 
+								<a href="https://git-scm.com/docs/git-reflog">git reflog</a> 
 
 								# git repository browser
 								<a href="https://git-scm.com/docs/gitk">gitk</a>
@@ -609,8 +627,11 @@
 					</section>		
 					<section>
 						<img style="height: 600px;" class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
-					</section>		
-					<section></section>		
+					</section>				
+				</section>
+				<section> 
+					<h6>QA / DEMO</h6>
+					<img src="assets/endGit.jpg">
 				</section>
 			</div>
 		</div>
