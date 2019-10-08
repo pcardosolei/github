@@ -271,6 +271,10 @@
 
 								# compare changes with the commit with a specific hash
 								git diff (commitHASH)
+
+								--dst-prefix='prefix' # rename destination commit
+								--src-prefix='prefix' # rename source commit
+
 							</code></pre>
 						</div>
 					</section>
@@ -519,6 +523,18 @@
 						<div class="container">
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-tag">tag</a>
+							
+								# shows existing tags in repo
+								git tag  
+								
+								# show tags by wildcard
+								git tag -l 'v.1.0.0*' 
+
+								# adds a tag to the HEAD commit 
+								git tag -a v1.0 -m "version 1.0"
+								
+								# or lightweight version
+								git tag v1.0-lw
 							</code></pre>
 						</div>
 					</section>
@@ -526,7 +542,7 @@
 						<div class="columns">
 							<div class="column is-8">
 								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> "commit"
+									git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> 'commit(s)'
 								</code></pre>
 							</div>
 							<div class="column is-4">
@@ -538,6 +554,8 @@
 						<div>
 							<pre><code data-trim data-noescape>
 								git rebase -i
+								
+								<strong class="warning">THIS REWRITES HISTORY</strong>
 							</code></pre>
 						</div>	
 					</section>
