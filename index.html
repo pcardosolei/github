@@ -408,19 +408,17 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre style="width: 120%"><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-pull">pull</a>
-							
-								git pull = git fetch origin +  git merge 
+									## git pull = git fetch origin +  git merge 
 								
-								# NOTES:
-								# changes your repo automatically when you run this command
-								###
-								<a href="https://coderwall.com/p/jgn6-q/git-pull-is-evil">'git pull' is evil!</a>
-								<a href="https://explainshell.com/explain?cmd=git+pull+--rebase">Alternative</a>
-								<a href="https://stackoverflow.com/a/15316602">Git pull alternative</a>
+								# fetchs the info for the origin repos
+								# changes your local branch where your HEAD points too automatically 
+								# when you run this command
+								# <strong class="warning">will auto merge for you if it can</strong>							
 							</code></pre>
 						<div class="container">
+								<div><a style="font-size: 18px" href="https://stackoverflow.com/a/15316602">Extra info about why Git pull can be bad</a></div>
 							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BKAszTfiBKkWDNQ1i_o_VdKTUiiU2TnY3Vxv1FA1N2rSJc9W">
 						</div>
 						</div>
@@ -430,33 +428,71 @@
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
 
-								# fetchs the information from the origin
-								git fetch origin | git fetch --all
-
-								# fetch a single branch
-								git fetch origin branch 
+								# fetchs the information from the origin or all repos
+								git fetch 'repo' | git fetch --all 
+															
+								git fetch origin 'branch' # fetch a single branch
+								<strong class="warning">IT DOES NOT UPDATE LOCAL BRANCHES AUTO</strong>
 							</code></pre>
 						</div>
-						<div style="height: 400px;" class="container">
+						<div style="height: 350px;" class="container">
 							<img src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
 						</div>
 					</section>					
 					<section>
-						<div class="columns">
-							<div class="column is-8">
-								<pre><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-merge">merge</a>
+							<img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" />
+					</section>
+					<section>
+						<div class="container">
+							<pre><code data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-merge">merge</a>
+								# The Little Monster or the Cool Guy
+					
+								git merge 'branch' --ff-only 
 
-									# The Little Monster or the Cool Guy
-								</code></pre>
-							</div>
-							<div class="column is-4">
-								<img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" />
-							</div>
+								git merge --abort ( usage when there are conflicts )
+							</code></pre>
 						</div>
 					</section>
 					<section>
-						<img src="assets/merge-ff.jpg">
+						<div>
+							<strong style="color: blue">Merge strategies</strong>
+						</div>
+						<ul style="margin-top: 20px">
+							<li>Explicit, non fast-forward merge</li>
+							<li>Implicit via rebase or fast-forward merge</li>
+							<li>Squash on merge</li>
+						</ul>
+						<p>Some extra info about this matter <a href="https://blog.developer.atlassian.com/pull-request-merge-strategies-the-great-debate/">link</a></p>
+						</section>
+					<section>
+						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-merge.gif">
+
+						<ul>
+							<li>Explicit merges are good for tracking.</li>
+							<li>recursive-3 way merge strategy, changable</li>
+						</ul>
+					</section>
+					<section>
+						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-rebase.gif">
+						<ul>
+							<li>replays commits on the target branch</li>
+							<li>rewriting history by changing the sha-1 ids</li>
+						</ul>
+					</section>
+					<section>
+						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-fast-forward.gif">
+						<pre><code  data-trim data-noescape>
+								git config --global merge.ff only
+								git merge --ff-only
+								# aborts in case of commits being on target dev.
+								# lose some context as part of an earlier branch
+							</code></pre>
+					</section>
+					<section>
+						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/squash-on-merge.gif">
+						<p style="font-size: 18px">Transforms all the commits in a single one "centralized"</p>
+						<p style="font-size: 18px">Feature branch stays if you need to track the changes that existed</p>
 					</section>
 					<section>					
 						<div class="columns">
@@ -533,7 +569,7 @@
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-rebase">rebase</a>
 								
-								<strong class="warning">THIS REWRITES HISTORY</strong>
+								<strong class="warning">THIS CAN REWRITES HISTORY</strong>
 								
 								git rebase -i ( DEMO )
 
@@ -544,9 +580,19 @@
 						<div class="container">
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-revert">revert</a>
+
+								# when you need to rollback on commits due to a broken commit
+																
+								# revert the changes specific by the fourth last commit in HEAD
+								# and creates a new commit
+								git revert HEAD~3
 								
-								# when the commit 
+								git revert --continue
+									--skip
+									--quit
+									--abort	
 							</code></pre>
+							<p><a href="https://dev.to/neshaz/when-to-use-git-reset-git-revert--git-checkout-18je">Checkout VS Reset VS Revert</a></p>
 						</div> 
 					</section>
 					<section>
@@ -606,16 +652,50 @@
 					</section>
 				</section>
 				<section>
+					<section>
+						<div><strong style="color:blue">Create a company policy of work</strong></div>
+						<div>
+							<p style="font-size: 16px">some sugestions:</p>
+							<ul>
+								<li>Multiple branches</li>
+								<li>Single branch master - with PR</li>
+								<li>Single history - with rebase</li>
+							</ul>
+						</div>
+					</section>
 					<section>BEST PRACTICES</section>
 					<section>One commit. One change</section>
 					<section>One Pull request. One Concern</section>
-					<section>Code Review!!!!!</section> 
-					<section>Proper commit messages</section>
+					<section>Code Review</section> 
+					<section>
+						<h4>Proper commit messages</h4>
+						<pre style="width: 120%"><code style="max-height: 500px; font-size: 14px" data-trim data-noescape>
+								Summarize changes in around 50 characters or less
+
+								More detailed explanatory text, if necessary. Wrap it to about 72 characters or so. In some contexts, the first line is
+								treated as the subject of the commit and the rest of the text as the body. The blank line separating the summary from the
+								body is critical (unless you omit the body entirely); various tools like `log`, `shortlog` and `rebase` can get confused
+								if you run the two together.
+								
+								Explain the problem that this commit is solving. Focus on why you are making this change as opposed to how (the code explains that).
+								Are there side effects or other unintuitive consequences of this change? Here's the place to explain them.
+								
+								Further paragraphs come after blank lines.
+								 - Bullet points are okay, too			
+								 - Typically a hyphen or asterisk is used for the bullet, preceded by a single space, 
+								   with blank lines in between, but conventions vary here.
+								
+								If you use an issue tracker, put references to them at the bottom, like this:
+								Resolves: #123
+								See also: #456, #789
+						</code></pre></section>
 					<section>Commit often, Squash and Publish</section>
 					<section>Don’t rewrite history on shared branches</section>
 					<section>Protect your important branches from rewriting</section>
-					<section>Do not commit large binaries</section>		
-					<section>Do not commit generated files</section>		
+					<section>
+						<p>Do not commit generated files</p>
+						<p>Do not commit large binaries</p>
+					</section>		
 					<section>Git Flow</section>
 				</section>
 				<section>
