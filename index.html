@@ -38,18 +38,19 @@
 				</section>
 				<section>
 					<section>
-						<h3>Characteristics</h3>
+						<h3>Values</h3>
 						<p>Strong support for non-linear development</p>
 						<p>Distributed development</p>
+						<p>Multiple protocol - HTTP, SSH, FTP</p>
 					</section>
 					<section>
-						<img style="width: 65%; height:450px;" src="assets/Hash_Tree.svg">
+						<img style="width: 65%; height:450px;" src="assets/hash-tree.svg">
 						<p>Concept of History</p>
 						<p class="yellow">NOTE: It is possible to rewrite the history</p>
 					</section>
 					<section>
 						
-						<img style="height:450px;" class="imgToBig" src="assets/structureGit.png">
+						<img style="height:450px;" class="imgToBig" src="assets/structure-git.png">
 					</section>
 					<section>
 						<div class="column is-12">
@@ -62,7 +63,7 @@
 							</ul>
 						</div>
 						<div class="container">
-							<img class="backupImage" src="assets/structureGit.png" />
+							<img class="backupImage" src="assets/structure-git.png" />
 						</div>
 						<aside class="notes">
 							<p>Volatile - Changes as the HEAD changes.</p>
@@ -82,7 +83,7 @@
 						</div>
 						<div class="container">
 							<div class="column is-12">
-								<img class="backupImage" src="assets/structureGit.png" />
+								<img class="backupImage" src="assets/structure-git.png" />
 							</div>
 						</div>
 						<aside class="notes">
@@ -99,7 +100,7 @@
 							</ul>
 						</div>
 						<div class="container">
-							<img class="backupImage" src="assets/structureGit.png" />
+							<img class="backupImage" src="assets/structure-git.png" />
 						</div>
 					</section>
 					<section>
@@ -113,7 +114,7 @@
 								</ul>
 							</div>
 							<div class="column is-4">
-								<img src="assets/detachedHead.png">
+								<img src="assets/detached-head.png">
 							</div>
 							<aside class="notes">
 								<p>Explain what is a Detached state ( experimental zone )</p>
@@ -122,7 +123,7 @@
 						</div>
 					</section>
 					<section>
-						<img src="assets/detachedCommitExample.png">
+						<img src="assets/detached-commit-example.png">
 						<aside class="notes">
 							<p>Detached State - How to save changes. git checkout -b "branch"</p>
 							<p>Explain what is HEAD^ , HEAD~ , THE MIX OF BOTH.</p>
@@ -142,13 +143,14 @@
 				<!-- SECOND BASIC GIT COMMANDS SECTION-->
 				<section>						
 					<section>
-						<h5>COMMANDS</h5>
+						<h4>COMMANDS</h4>
+						<h6>Startup, Config and Helpers</h6>
 					</section>
 					<section>
 						<div>
 							<div>
 								<p>Creates a .git directory with the default configs</p>
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-init">init</a> "repo"
 								</code></pre>
 							</div>
@@ -156,7 +158,7 @@
 								<img src="https://www.meme-arsenal.com/memes/384d2d0757c2db6d9a08cee642cf802b.jpg"/>
 							</div>		
 							<div>
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-clone">clone</a> 'https://github.com/(username)/(repository).git'
 								</code></pre>
 								<p>Clones an existing git repository</p>
@@ -164,7 +166,7 @@
 						</div>
 					</section>
 					<section>
-						<pre><code data-trim data-noescape>
+						<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-config">config</a>
 								
 								# configuring a user.name
@@ -183,7 +185,7 @@
 					<section>					
 						<div class="columns">
 							<div class="column is-8">
-								<pre><code data-trim data-noescape>
+								<pre><code class="hljs shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-status">status</a>
 								
 									git status --short | --long ( default )
@@ -195,23 +197,23 @@
 						</div>	
 					</section>
 					<section>
-						<pre><code data-trim data-noescape>
+						<pre><code class="shell-session" data-trim data-noescape>
 							git <a href="https://git-scm.com/docs/git-show">show</a>			
 							
-							# show information about a specific commit - changes / author / date / etc
+							$ show information about a specific commit - changes / author / date / etc
 							git show "commit"
 
-							# most options are relative to type of information to be shown
-							# short | medium | full | fuller | email
+							$ most options are relative to type of information to be shown
+							$ short | medium | full | fuller | email
 						</code></pre>			
 					</section>
 					<section>
 						<div class="columns">
 							<div class="column is-8">
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-log">log</a>
 
-									# check for the just a specific type of commits
+									#check for the just a specific type of commits
 									git log --no-merges | --merges
 
 									# check for commit related to a user
@@ -232,7 +234,7 @@
 					</section>
 					<section>
 						<div class="column is-12">
-							<img src="assets//log-example.png">
+							<img src="assets/log-example.png">
 						</div>
 					</section>
 					<section>
@@ -241,7 +243,7 @@
 								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
 							</div>
 							<div class="column is-8">
-								<pre><code data-trim data-noescape>			
+								<pre><code class="shell-session" data-trim data-noescape>			
 									git <a href="https://git-scm.com/docs/git-blame">blame FileName</a>	
 										
 									# Show what revision and author last modified 
@@ -259,7 +261,7 @@
 					</section>
 					<section>				
 						<div class="container">
-							<pre><code style="max-height: 500px" data-trim data-noescape>
+							<pre><code class="shell-session" style="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-diff">diff</a>
 
 								# Compare changes from local repo with untracked changes
@@ -284,11 +286,15 @@
 				<section>
 					<!-- should end here-->
 					<section>
+						<h4>COMMANDS</h4>
+						<h6>Relative to git flow</h6>
+					</section>
+					<section>
 						<img src="https://howto8165.files.wordpress.com/2014/09/git-tree.png?w=1108" />
 					</section>
 					<section>					
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-branch">branch</a>
 								
 								# Create a branch
@@ -296,8 +302,8 @@
 								
 								# All local branches	
 								git branch 
-								git branch -a  
-								git branch -r	 
+								git branch -a # all  
+								git branch -r # remote	 
 
 								# Deletes a branch 
 								git branch -d  
@@ -316,7 +322,7 @@
 								<img src="https://i.chzbgr.com/full/7803746304/hC0425E78/" />
 							</div>
 							<div class="column is-9">
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
 
 									# Checkout to a existing branch
@@ -338,7 +344,7 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
 									
 								# Add all files that are on the root of the current directory
@@ -349,32 +355,30 @@
 
 								# Add updated files 
 								git add -u
-
-								# You can use regex to add specific files
 							</code></pre>
 						</div>
 					</section>
 					<section>
-						<img ;" src="https://git-scm.com/figures/18333fig0201-tn.png">
+						<img src="https://git-scm.com/figures/18333fig0201-tn.png">
 					</section>
 					<section>
 						<img style="width: 600px" class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
 					</section>
 					<section>
 						<div class="container">
-							<pre><code class="max-height: 500px" data-trim data-noescape>
+							<pre><code class="shell-session" class="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-commit">commit</a>
 						
 								# Create a commit with all modified and updated files from the repo
 								git commit -a
 
-								# aAd a message to the commit  <strong style="color: blue">MESSAGE IS REQUIRED</strong> 
+								# Add a message to the commit  <strong style="color: blue">MESSAGE IS REQUIRED</strong> 
 								git commit -m "message" 
 				
-								-m can be <strong>omitted</strong> -> git will open VSCode / Vim or chosen text editor
+								# -m can be <strong>omitted</strong> -> git will open VSCode / Vim or chosen text editor
 							
 								git commit -p  # commit interactive					
-								git commit -u # untracked-files
+								git commit -u  # untracked-files
 
 								# when finished it creates a new revision/commit into the local repo
 							</code></pre>
@@ -382,13 +386,13 @@
 					</section>
 					<section>
 						<div>
-							<pre><code data-trim data-noescape>
-								git <a href="https://git-scm.com/docs/git-push">push</a> #the normal usage
+							<pre><code class="shell-session" data-trim data-noescape>
+								git <a href="https://git-scm.com/docs/git-push">push</a> // the normal usage
 								
-								<strong class="warning">CAREFUL WITH UPSTREAM</strong>
+								# <strong class="warning">CAREFUL WITH UPSTREAM</strong>
 								git branch --set-upstream-to="origin/'branch-name'"
 
-								<strong class="red">DELETING A REMOTE BRANCH</strong>
+								# <strong class="red">DELETING A REMOTE BRANCH</strong>
 								git push --delete origin 'branch-name'
 							</code></pre>
 							<img style="width: 60%; max-height:400px;" class="imgToBig" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
@@ -414,15 +418,16 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session"data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-pull">pull</a>
 								
-								# git pull = git fetch origin +  git merge 
+								git pull => git fetch origin <strong class="warning">FOLLOWED BY </strong> git merge 
 								
 								# Fetchs the info for the origin repos
 								# Changes your local branch where your HEAD points too automatically 
 								# When you run this command
 								# <b class="warning">Will auto merge for you if it can</b>
+								# Creates a merge automatically ( Sometimes you don't want it)
 								</code></pre>
 						<div class="container">
 								<div><a style="font-size: 18px" href="https://stackoverflow.com/a/15316602">Extra info about why Git pull can be bad</a></div>
@@ -432,14 +437,14 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
 
 								# Fetchs the information from the origin or all repos
 								git fetch 'repo' | git fetch --all 
 															
-								git fetch origin 'branch' # fetch a single branch
-								<strong class="warning">IT DOES NOT UPDATE LOCAL BRANCHES AUTO</strong>
+								git fetch origin 'branch' // fetch a single branch
+								<strong class="warning">IT DOES NOT UPDATE LOCAL BRANCHES AUTOMATICALLY</strong>
 							</code></pre>
 						</div>
 						<div class="container">
@@ -451,7 +456,7 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-merge">merge</a>
 								# The Little Monster or the Cool Guy
 					
@@ -490,7 +495,7 @@
 					</section>
 					<section>
 						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-fast-forward.gif">
-						<pre><code  data-trim data-noescape>
+						<pre><code class="shell-session" data-trim data-noescape>
 								git config --global merge.ff only
 								git merge --ff-only
 								# aborts in case of commits being on target dev.
@@ -505,13 +510,13 @@
 					<section>					
 						<div class="columns">
 							<div class="column is-8">
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-reset">reset</a>
 								
 									# staged to unstaged
 									git reset 
 									
-									<strong class="red">NOTE: Unstaged Changes will dissapear</strong>
+									# <strong class="red">NOTE: Unstaged Changes will dissapear</strong>
 									# staged/unstaged to latest existing commit 
 									git reset --hard
 									
@@ -529,7 +534,7 @@
 						</section>
 						<section>
 							<div class="container">
-								<pre><code style="max-height: 500px" data-trim data-noescape>
+								<pre><code class="shell-session" style="max-height: 500px" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-stash">stash</a>
 	
 									# add to the stash
@@ -555,8 +560,11 @@
 				</section>
 				<section>
 					<section>
+						<h4>Advanced Git Commands</h4>
+					</section>
+					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> 'commit(s)'
 							
 								# copys specific commits to be added into the local HEAD
@@ -574,7 +582,7 @@
 					</section>
 					<section>
 						<div>
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-rebase">rebase</a>
 								
 								<strong class="warning">THIS CAN REWRITES HISTORY</strong>
@@ -586,7 +594,7 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-revert">revert</a>
 
 								# when you need to rollback on commits due to a broken commit
@@ -606,7 +614,7 @@
 					<section>
 						<div>
 							<div>
-								<pre><code data-trim data-noescape>
+								<pre><code class="shell-session" data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-remote">remote</a>
 								
 									# mostly about the remote repo config
@@ -624,7 +632,7 @@
 					</section>
 					<section>			
 						<div class="container">
-							<pre><code data-trim data-noescape>
+							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-tag">tag</a>
 							
 								# shows existing tags in repo
@@ -636,13 +644,13 @@
 								# adds a tag to the HEAD commit 
 								git tag -a v1.0 -m "version 1.0"
 								
-								# or lightweight version
+								// or lightweight version
 								git tag v1.0-lw
 							</code></pre>
 						</div>
 					</section>
 					<section>
-						<pre><code data-trim data-noescape>
+						<pre><code class="shell-session" data-trim data-noescape>
 								# other commands 
 
 								# kinda of a changelog
@@ -660,6 +668,7 @@
 					</section>
 				</section>
 				<section>
+					<section>BEST PRACTICES</section>
 					<section>
 						<div><strong style="color:blue">Create a company policy of work</strong></div>
 						<div>
@@ -671,7 +680,6 @@
 							</ul>
 						</div>
 					</section>
-					<section>BEST PRACTICES</section>
 					<section>One commit. One change</section>
 					<section>One Pull request. One Concern</section>
 					<section>Code Review</section> 
@@ -705,7 +713,7 @@
 						<p>Do not commit generated files</p>
 						<p>Do not commit large binaries</p>
 					</section>		
-					<section>Git Flow</section>
+					<section>Use branching</section>
 				</section>
 				<section>
 					<section>
@@ -726,6 +734,10 @@
 					<h6>QA / DEMO</h6>
 					<img src="assets/endGit.jpg">
 				</section>
+				<section>
+					<h6>Extra info</h6>
+					<p>	https://www.daolf.com/posts/git-series-part-1/#targetText=Every%2Dtime%20you%20create%20a,ourselves%20what%20is%20a%20commit.</p> 
+				</section>
 			</div>
 		</div>
 
@@ -742,6 +754,8 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+					{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
 		</script>

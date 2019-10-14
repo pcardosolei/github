@@ -38,9 +38,9 @@ li {
 }
 
 .red {
-    color: red;
+    color: red !important;
 }
 
 .warning {
-    color: yellow;
+    color: yellow !important;
 }
