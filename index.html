@@ -32,7 +32,9 @@
 				</section>
 				<!-- FIRST SECTION -->
 				<section>
-					<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
+					<div class="column is-12">
+						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_1280333_3kAF2.gif">
+					</div>
 				</section>
 				<section>
 					<section>
@@ -41,12 +43,16 @@
 						<p>Distributed development</p>
 					</section>
 					<section>
-						<img style="width: 65%" src="assets/Hash_Tree.svg">
+						<img style="width: 65%; height:450px;" src="assets/Hash_Tree.svg">
 						<p>Concept of History</p>
 						<p class="yellow">NOTE: It is possible to rewrite the history</p>
 					</section>
-					<section data-background-image="assets/structureGit.png" data-background-size="65%"></section>
 					<section>
+						
+						<img style="height:450px;" class="imgToBig" src="assets/structureGit.png">
+					</section>
+					<section>
+						<div class="column is-12">
 						<div class="container">
 							<h5>WORKING DIRECTORY</h5>
 							<ul>
@@ -63,6 +69,7 @@
 							<p>It is what the coder sees on its personal computer</p>
 							<p>HEAD will be explained later</p>
 						</aside>
+						</div>
 					</section>
 					<section>
 						<div class="container">
@@ -74,7 +81,9 @@
 							</ul>
 						</div>
 						<div class="container">
-							<img class="backupImage" src="assets/structureGit.png" />
+							<div class="column is-12">
+								<img class="backupImage" src="assets/structureGit.png" />
+							</div>
 						</div>
 						<aside class="notes">
 							<p> It is here where the coder makes all the magic happen.</p>
@@ -92,10 +101,6 @@
 						<div class="container">
 							<img class="backupImage" src="assets/structureGit.png" />
 						</div>
-						<aside class="notes">
-							<p></p>
-							<p></p>
-						</aside>
 					</section>
 					<section>
 						<h5>HEAD</h5>
@@ -124,8 +129,9 @@
 						</aside>
 					</section>
 					<section>
-						<img class="imgToBig" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1280px-Git_operations.svg.png" />
-						
+						<div class="column is-12">
+							<img class="imgToBig" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1280px-Git_operations.svg.png" />
+						</div>
 						<aside class="notes">
 							Multiple ways to reach a state. The most used ones are this ones
 						</aside>
@@ -158,7 +164,7 @@
 						</div>
 					</section>
 					<section>
-						<pre style="width: 110%"><code data-trim data-noescape>
+						<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-config">config</a>
 								
 								# configuring a user.name
@@ -189,7 +195,7 @@
 						</div>	
 					</section>
 					<section>
-						<pre style="width: 110%"><code data-trim data-noescape>
+						<pre><code data-trim data-noescape>
 							git <a href="https://git-scm.com/docs/git-show">show</a>			
 							
 							# show information about a specific commit - changes / author / date / etc
@@ -201,7 +207,7 @@
 					</section>
 					<section>
 						<div class="columns">
-							<div class="column is-10">
+							<div class="column is-8">
 								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-log">log</a>
 
@@ -225,7 +231,9 @@
 						</aside>
 					</section>
 					<section>
-						<img src="assets//log-example.png">
+						<div class="column is-12">
+							<img src="assets//log-example.png">
+						</div>
 					</section>
 					<section>
 						<div class="columns">
@@ -233,47 +241,43 @@
 								<img src="https://media.makeameme.org/created/git-blame-blame.jpg" />
 							</div>
 							<div class="column is-8">
-								<pre style="width: 120%"><code data-trim data-noescape>
-									git <a href="https://git-scm.com/docs/git-blame">blame "file"</a>
-									-l ( long revision )
-
-									# find the commiter between lines 0 and 10 of the filename
-									git blame filename -L 0,10
-
-									# for debug purposes
-									# An easy way to find who wrote the code 
-									# or 
-									# which commit is associated its logic
-									# or
-									# tracking changes
+								<pre><code data-trim data-noescape>			
+									git <a href="https://git-scm.com/docs/git-blame">blame FileName</a>	
+										
+									# Show what revision and author last modified 
+									# each line of a file 			
 								</code></pre>
 							</div>
 						</div>
 					</section>
 					<section>
-							<img style="width: 60%;" src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+						<div class="columns">
+							<div class="column is-12">
+								<img style="width: 60%;" src="https://img.devrant.com/devrant/rant/r_811491_uTXmv.jpg" />
+							</div>
+						</div>
 					</section>
 					<section>				
 						<div class="container">
 							<pre><code style="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-diff">diff</a>
 
-								# compare changes from local repo with untracked changes
+								# Compare changes from local repo with untracked changes
 								git diff
 								
-								# compare changes from local repo with staged changes
+								# Compare changes from local repo with staged changes
 								git diff --cached
 
-								# compare changes with commit that commited 3 revisions before
+								# Compare changes with commit that commited 3 revisions before
 								git diff HEAD~3
 
-								# compare changes with the commit with a specific hash
+								# Compare changes with the commit with a specific hash
 								git diff (commitHASH)
 
 								--dst-prefix='prefix' # rename destination commit
 								--src-prefix='prefix' # rename source commit
 
-							</code></pre>
+								</code></pre>
 						</div>
 					</section>
 				</section>
@@ -284,40 +288,44 @@
 					</section>
 					<section>					
 						<div class="container">
-							<pre style="width: 110%"><code data-trim data-noescape>
+							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-branch">branch</a>
-
-								git branch 'branch-name' #create a branch
-
-								git branch # all local branches
-								git branch -a  # Check all the branches
-								git branch -r	# Check existing remote branches  
-
-								git branch -d  # deletes a branch 
 								
-								# delete w/ force a branch with existing changes to be commited/ merged
+								# Create a branch
+								git branch 'branch-name' 
+								
+								# All local branches	
+								git branch 
+								git branch -a  
+								git branch -r	 
+
+								# Deletes a branch 
+								git branch -d  
+								
+								# Delete w/ force a branch with existing changes to be commited/ merged
 								git branch -D  branch  
 									
-								git branch --contains 'commit' # check which branch contains a commit
+								# Check which branch contains a commit
+								git branch --contains 'commit' 
 							</code></pre>
 						</div>
 					</section>
 					<section>	
 						<div class="columns">				
-							<div class="column is-4">
+							<div class="column is-3">
 								<img src="https://i.chzbgr.com/full/7803746304/hC0425E78/" />
 							</div>
-							<div class="column is-10">
-								<pre style="width: 110%"><code data-trim data-noescape>
+							<div class="column is-9">
+								<pre><code data-trim data-noescape>
 									git <a href="https://git-scm.com/docs/git-checkout">checkout</a>
 
-									# checkout to a existing branch
+									# Checkout to a existing branch
 									git checkout branch
 
-									# checkout to a branch and create if it does not exist 
+									# Checkout to a branch and create if it does not exist 
 									git checkout -b new-branch
 
-									<strong class="red"># Note: the following command deletes all untracked changes</strong>
+									<strong style="color:red!important"># The following command deletes all untracked changes</strong>
 									git checkout .
 								</code></pre>
 							</div>
@@ -333,34 +341,34 @@
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-add">add</a> "file(s)"
 									
-								# add all files that are on the root of the current directory
+								# Add all files that are on the root of the current directory
 								git add . 
 
-								# add all files
+								# Add all files
 								git add -a
 
-								#add updated files 
+								# Add updated files 
 								git add -u
 
-								# you can use regex to add specific files
+								# You can use regex to add specific files
 							</code></pre>
 						</div>
 					</section>
 					<section>
-						<img style="width: 120%;" src="https://git-scm.com/figures/18333fig0201-tn.png">
+						<img ;" src="https://git-scm.com/figures/18333fig0201-tn.png">
 					</section>
 					<section>
 						<img style="width: 600px" class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
 					</section>
 					<section>
 						<div class="container">
-							<pre style="width: 110%"><code class="max-height: 500px" data-trim data-noescape>
+							<pre><code class="max-height: 500px" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-commit">commit</a>
 						
-								# create a commit with all modified and updated files from the repo
+								# Create a commit with all modified and updated files from the repo
 								git commit -a
 
-								# add a message to the commit  <strong style="color: blue">MESSAGE IS REQUIRED</strong> 
+								# aAd a message to the commit  <strong style="color: blue">MESSAGE IS REQUIRED</strong> 
 								git commit -m "message" 
 				
 								-m can be <strong>omitted</strong> -> git will open VSCode / Vim or chosen text editor
@@ -383,7 +391,7 @@
 								<strong class="red">DELETING A REMOTE BRANCH</strong>
 								git push --delete origin 'branch-name'
 							</code></pre>
-							<img style="width: 60%" class="imgToBig" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
+							<img style="width: 60%; max-height:400px;" class="imgToBig" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
 						</div>
 					</section>
 					<section>
@@ -406,15 +414,16 @@
 					</section>
 					<section>
 						<div class="container">
-							<pre style="width: 120%"><code data-trim data-noescape>
+							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-pull">pull</a>
-									## git pull = git fetch origin +  git merge 
 								
-								# fetchs the info for the origin repos
-								# changes your local branch where your HEAD points too automatically 
-								# when you run this command
-								# <strong class="warning">will auto merge for you if it can</strong>							
-							</code></pre>
+								# git pull = git fetch origin +  git merge 
+								
+								# Fetchs the info for the origin repos
+								# Changes your local branch where your HEAD points too automatically 
+								# When you run this command
+								# <b class="warning">Will auto merge for you if it can</b>
+								</code></pre>
 						<div class="container">
 								<div><a style="font-size: 18px" href="https://stackoverflow.com/a/15316602">Extra info about why Git pull can be bad</a></div>
 							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BKAszTfiBKkWDNQ1i_o_VdKTUiiU2TnY3Vxv1FA1N2rSJc9W">
@@ -426,15 +435,15 @@
 							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-fetch">fetch</a>
 
-								# fetchs the information from the origin or all repos
+								# Fetchs the information from the origin or all repos
 								git fetch 'repo' | git fetch --all 
 															
 								git fetch origin 'branch' # fetch a single branch
 								<strong class="warning">IT DOES NOT UPDATE LOCAL BRANCHES AUTO</strong>
 							</code></pre>
 						</div>
-						<div style="height: 350px;" class="container">
-							<img src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
+						<div class="container">
+							<img style="max-height: 350px;" src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
 						</div>
 					</section>					
 					<section>
@@ -449,7 +458,7 @@
 								git merge 'branch' --ff-only 
 
 								git merge --abort ( usage when there are conflicts )
-							</code></pre>
+								</code></pre>
 						</div>
 					</section>
 					<section>
@@ -465,7 +474,7 @@
 						</section>
 					<section>
 						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-merge.gif">
-
+						<br>
 						<ul>
 							<li>Explicit merges are good for tracking.</li>
 							<li>recursive-3 way merge strategy, changable</li>
@@ -473,6 +482,7 @@
 					</section>
 					<section>
 						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-rebase.gif">
+						<br>
 						<ul>
 							<li>replays commits on the target branch</li>
 							<li>rewriting history by changing the sha-1 ids</li>
@@ -485,7 +495,7 @@
 								git merge --ff-only
 								# aborts in case of commits being on target dev.
 								# lose some context as part of an earlier branch
-							</code></pre>
+						</code></pre>
 					</section>
 					<section>
 						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/squash-on-merge.gif">
@@ -546,7 +556,7 @@
 				<section>
 					<section>
 						<div class="container">
-							<pre style="width: 110%"><code data-trim data-noescape>
+							<pre><code data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> 'commit(s)'
 							
 								# copys specific commits to be added into the local HEAD
@@ -667,7 +677,7 @@
 					<section>Code Review</section> 
 					<section>
 						<h4>Proper commit messages</h4>
-						<pre style="width: 120%"><code style="max-height: 500px; font-size: 14px" data-trim data-noescape>
+						<pre><code style="max-height: 500px; font-size: 14px" data-trim data-noescape>
 								Summarize changes in around 50 characters or less
 
 								More detailed explanatory text, if necessary. Wrap it to about 72 characters or so. In some contexts, the first line is
@@ -686,7 +696,8 @@
 								If you use an issue tracker, put references to them at the bottom, like this:
 								Resolves: #123
 								See also: #456, #789
-						</code></pre></section>
+						</code></pre>
+					</section>
 					<section>Commit often, Squash and Publish</section>
 					<section>Don’t rewrite history on shared branches</section>
 					<section>Protect your important branches from rewriting</section>
@@ -701,10 +712,14 @@
 						Don'ts !!
 					</section>
 					<section>	
-						<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
+						<div class="column is-12">
+							<img class="imgToBig" src="https://img.devrant.com/devrant/rant/r_32287_UczU6.jpg">
+						</div>
 					</section>		
 					<section>
-						<img style="height: 600px;" class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
+						<div class="column is-12">
+							<img class="heightToBig" src="https://pics.me.me/merge-conflict-git-reset-hard-heada-git-push-force-origin-master-61100888.png">
+						</div>	
 					</section>				
 				</section>
 				<section> 

@@ -3,6 +3,12 @@
     width: 35vw;
 }
 
+.reveal section img{
+    max-height: 550px;
+}
+.reveal pre code{
+    max-height: fit-content!important;
+}
 .imgToBig {
     width: 80%;
     height: auto;
