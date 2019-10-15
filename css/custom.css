@@ -6,6 +6,7 @@
 .reveal section img{
     max-height: 550px;
 }
+
 .reveal pre code{
     max-height: fit-content!important;
 }
@@ -43,4 +44,9 @@ li {
 
 .warning {
     color: yellow !important;
+}
+
+.imgTest{
+    max-height: 650px;
+    height: 650px;
 }

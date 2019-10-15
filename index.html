@@ -41,16 +41,15 @@
 						<h3>Values</h3>
 						<p>Strong support for non-linear development</p>
 						<p>Distributed development</p>
-						<p>Multiple protocol - HTTP, SSH, FTP</p>
+						<p>Scalable, Performant </p>
 					</section>
 					<section>
 						<img style="width: 65%; height:450px;" src="assets/hash-tree.svg">
 						<p>Concept of History</p>
 						<p class="yellow">NOTE: It is possible to rewrite the history</p>
 					</section>
-					<section>
-						
-						<img style="height:450px;" class="imgToBig" src="assets/structure-git.png">
+					<section >
+						<img src="assets/structure-git.png">
 					</section>
 					<section>
 						<div class="column is-12">
@@ -68,7 +67,7 @@
 						<aside class="notes">
 							<p>Volatile - Changes as the HEAD changes.</p>
 							<p>It is what the coder sees on its personal computer</p>
-							<p>HEAD will be explained later</p>
+							<p>Snapshop of the working folder to see the changes</p>
 						</aside>
 						</div>
 					</section>
@@ -94,7 +93,7 @@
 						<div class="container">
 							<h5>REMOTE</h5>
 							<ul>
-								<li> The place where the code is stored </li>
+								<li> The place where the code is stored / visible by all</li>
 								<li> URL can be a repo, a repo from a fork or another server </li>
 								<li> Remote URL represented by a name ( default : ORIGIN )</li>
 							</ul>
@@ -204,7 +203,7 @@
 							git show "commit"
 
 							$ most options are relative to type of information to be shown
-							$ short | medium | full | fuller | email
+							$ --format=short | medium | full | fuller | email
 						</code></pre>			
 					</section>
 					<section>
@@ -331,7 +330,7 @@
 									# Checkout to a branch and create if it does not exist 
 									git checkout -b new-branch
 
-									<strong style="color:red!important"># The following command deletes all untracked changes</strong>
+									<strong style="color:red!important">The following command deletes all untracked changes</strong>
 									git checkout .
 								</code></pre>
 							</div>
@@ -351,18 +350,18 @@
 								git add . 
 
 								# Add all files
-								git add -a
+								git add -A
 
-								# Add updated files 
+								# Add updated/modified files 
 								git add -u
 							</code></pre>
 						</div>
 					</section>
 					<section>
-						<img src="https://git-scm.com/figures/18333fig0201-tn.png">
+						<img class="imgTest" src="https://git-scm.com/figures/18333fig0201-tn.png">
 					</section>
 					<section>
-						<img style="width: 600px" class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
+						<img style="width: 600px;" class="imageTooSmall" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvQuhFDzWfjxXg2ccffNfOk3e9DTLIxHk5Fxqj3GsrOaBxREP">
 					</section>
 					<section>
 						<div class="container">
@@ -389,10 +388,10 @@
 							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-push">push</a> // the normal usage
 								
-								# <strong class="warning">CAREFUL WITH UPSTREAM</strong>
+								 <strong class="warning">CAREFUL WITH UPSTREAM</strong>
 								git branch --set-upstream-to="origin/'branch-name'"
 
-								# <strong class="red">DELETING A REMOTE BRANCH</strong>
+								 <strong class="red">DELETING A REMOTE BRANCH</strong>
 								git push --delete origin 'branch-name'
 							</code></pre>
 							<img style="width: 60%; max-height:400px;" class="imgToBig" src="https://miro.medium.com/max/650/1*ODQUZPiwWu04XxKX4f2jbg.jpeg">
@@ -426,8 +425,7 @@
 								# Fetchs the info for the origin repos
 								# Changes your local branch where your HEAD points too automatically 
 								# When you run this command
-								# <b class="warning">Will auto merge for you if it can</b>
-								# Creates a merge automatically ( Sometimes you don't want it)
+								<b class="warning">Creates a merge automatically ( Sometimes you don't want it)</b>
 								</code></pre>
 						<div class="container">
 								<div><a style="font-size: 18px" href="https://stackoverflow.com/a/15316602">Extra info about why Git pull can be bad</a></div>
@@ -444,21 +442,21 @@
 								git fetch 'repo' | git fetch --all 
 															
 								git fetch origin 'branch' // fetch a single branch
-								<strong class="warning">IT DOES NOT UPDATE LOCAL BRANCHES AUTOMATICALLY</strong>
+								#IT DOES NOT UPDATE LOCAL BRANCHES AUTOMATICALLY
 							</code></pre>
 						</div>
 						<div class="container">
 							<img style="max-height: 350px;" src="https://pics.me.me/git-fetch-p-what-if-github-goes-downp-made-on-29993788.png" />
 						</div>
 					</section>					
-					<section>
-							<img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" />
+					<section data-background-image="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif">
+							<!--<img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" />-->
 					</section>
 					<section>
 						<div class="container">
 							<pre><code class="shell-session" data-trim data-noescape>
 								git <a href="https://git-scm.com/docs/git-merge">merge</a>
-								# The Little Monster or the Cool Guy
+								# From 0 conflicts to a lot of them
 					
 								git merge 'branch' --ff-only 
 
@@ -468,7 +466,7 @@
 					</section>
 					<section>
 						<div>
-							<strong style="color: blue">Merge strategies</strong>
+							<strong style="color: lightblue">Merge strategies</strong>
 						</div>
 						<ul style="margin-top: 20px">
 							<li>Explicit, non fast-forward merge</li>
@@ -497,8 +495,8 @@
 						<img src="https://blog.developer.atlassian.com/wp-content/uploads/2019/01/what-is-a-fast-forward.gif">
 						<pre><code class="shell-session" data-trim data-noescape>
 								git config --global merge.ff only
-								git merge --ff-only
-								# aborts in case of commits being on target dev.
+								git merge 'branch' --ff-only
+								# aborts in case there are new commits on the target.
 								# lose some context as part of an earlier branch
 						</code></pre>
 					</section>
@@ -736,7 +734,7 @@
 				</section>
 				<section>
 					<h6>Extra info</h6>
-					<p>	https://www.daolf.com/posts/git-series-part-1/#targetText=Every%2Dtime%20you%20create%20a,ourselves%20what%20is%20a%20commit.</p> 
+					<a href="https://www.daolf.com/posts/git-series-part-1/#targetText=Every%2Dtime%20you%20create%20a,ourselves%20what%20is%20a%20commit">	.Git directory</a> 
 				</section>
 			</div>
 		</div>
